@@ -8,6 +8,6 @@ registry = "https://github.com/mnmzc/LuaClass"
 realm = "shared"
 
 exclude = ["**"]
-include = ["source", "default.project.json", "wally.toml"]
+include = ["src", "default.project.json", "wally.toml", "selene.toml"]
 
 [dependencies]

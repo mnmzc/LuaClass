@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="plugin-moonwave plugin-id-moonwave">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v2.3.1">
+<title data-rh="true">ClassBuilder | LuaClass</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://mnmzc.github.io/LuaClass/api/ClassBuilder"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docusaurus_tag" content="default"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docsearch:docusaurus_tag" content="default"><meta data-rh="true" property="og:title" content="ClassBuilder | LuaClass"><meta data-rh="true" name="description" content="The primary class that contains functions to help you create classes."><meta data-rh="true" property="og:description" content="The primary class that contains functions to help you create classes."><link data-rh="true" rel="canonical" href="https://mnmzc.github.io/LuaClass/api/ClassBuilder"><link data-rh="true" rel="alternate" href="https://mnmzc.github.io/LuaClass/api/ClassBuilder" hreflang="en"><link data-rh="true" rel="alternate" href="https://mnmzc.github.io/LuaClass/api/ClassBuilder" hreflang="x-default"><link rel="stylesheet" href="/LuaClass/assets/css/styles.fd8953ce.css">
+<link rel="preload" href="/LuaClass/assets/js/runtime~main.f0269f4e.js" as="script">
+<link rel="preload" href="/LuaClass/assets/js/main.c48a4010.js" as="script">
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function e(e){document.documentElement.setAttribute("data-theme",e)}var t=function(){var e=null;try{e=localStorage.getItem("theme")}catch(e){}return e}();null!==t?e(t):window.matchMedia("(prefers-color-scheme: dark)").matches?e("dark"):(window.matchMedia("(prefers-color-scheme: light)").matches,e("light"))}()</script><div id="__docusaurus">
+<div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/LuaClass/"><b class="navbar__title text--truncate">LuaClass</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/LuaClass/api/">API</a></div><div class="navbar__items navbar__items--right"><a href="https://github.com/mnmzc/LuaClass" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Switch between dark and light mode (currently light mode)" aria-label="Switch between dark and light mode (currently light mode)" aria-live="polite"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="searchBox_ZlJk"><div class="navbar__search"><span aria-label="expand searchbar" role="button" class="search-icon" tabindex="0"></span><input type="search" id="search_input_react" placeholder="Loading..." aria-label="Search" class="navbar__search-input search-bar" disabled=""></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0 docPageContainer_wNNk"><div class="docPage_Dpn1"><div class="docSidebarContainer_o_re"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" href="/LuaClass/api/ClassBuilder">​Class​Builder</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/LuaClass/api/Utils">​Utils</a></li></ul></nav></div></div><main class="docMainContainer_HJE1"><div class="container padding-vert--lg"><div class="row"><div class="col docItemCol_MU3C"><div class="docItemContainer_Wv98"><article><div class="member_J0w1 markdown"><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_oUs_"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><header><h1 class="docTitle_mZRt" style="text-decoration:none"><span style="display:inline-block">Class</span><span style="display:inline-block">Builder</span></h1><div class="luaClassTags_EipM"></div><div>
+<p>The primary class that contains functions to help you create classes.</p>
+</div></header><h2 class="anchor anchorWithStickyNavbar_LWe7" id="types">Types<a href="#types" class="hash-link" aria-label="Direct link to Types" title="Direct link to Types">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="ClassMethod"><code style="text-decoration:none">ClassMethod</code><a href="#ClassMethod" class="hash-link" aria-label="Direct link to ClassMethod" title="Direct link to ClassMethod">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/mnmzc/LuaClass/blob/master/src/ClassBuilder.lua#L43"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">interface</code> <code>ClassMethod<!-- --> <!-- -->{</code><div class="inset_uKQm"><div><code>methodSymbol<!-- -->: </code><code class="blue_P4bS">methodSymbol</code><span class="inlineDescription_G7Er">-- <span>
+<p>A userdata to indicate that this is a method</p>
+</span></span></div><div><code>call<!-- -->: </code><code class="blue_P4bS">function</code><span class="inlineDescription_G7Er">-- <span>
+<p>The function that will be called when this method is used</p>
+</span></span></div><div><code>methodModifiers<!-- -->: </code><code class="purple_ieR2">{</code><code class="blue_P4bS">static</code><code class="op_lSLc"> | </code><code class="blue_P4bS">private</code><code class="purple_ieR2">}</code><span class="inlineDescription_G7Er">-- <span>
+<p>If you provide the <code>static</code> or <code>private</code> modifiers, they will appear here</p>
+</span></span></div></div><code>}</code></div><div>
+<p>An object that represents a method that can be consumed by your class definition.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Class"><code style="text-decoration:none">Class</code><a href="#Class" class="hash-link" aria-label="Direct link to Class" title="Direct link to Class">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/mnmzc/LuaClass/blob/master/src/ClassBuilder.lua#L62"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">interface</code> <code>Class<!-- --> <!-- -->{</code><div class="inset_uKQm"><div><code>new<!-- -->: </code><code class="blue_P4bS">function</code><span class="inlineDescription_G7Er">-- <span>
+<p>A function that can be used to instantiate a new object</p>
+</span></span></div><div><code>any<!-- -->: </code><span><code>[</code><code class="blue_P4bS">function</code><code>]</code></span><span class="inlineDescription_G7Er">-- <span>
+<p>The <strong>static</strong> methods and properties that exist in the class</p>
+</span></span></div></div><code>}</code></div><div>
+<p>Contains a <code>new</code> function to instantiate new objects, as well as any static methods.</p>
+<div class="admonition admonition-danger alert alert--danger">
+  <div class="admonition-heading">
+    <h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="16" viewBox="0 0 12 16">
+          <path d="M5.05.31c.81 2.17.41 3.38-.52 4.31C3.55 5.67 1.98 6.45.9 7.98c-1.45 2.05-1.7 6.53 3.53 7.7-2.2-1.16-2.67-4.52-.3-6.61-.61 2.03.53 3.33 1.94 2.86 1.39-.47 2.3.53 2.27 1.67-.02.78-.31 1.44-1.13 1.81 3.42-.59 4.78-3.42 4.78-5.56 0-2.84-2.53-3.22-1.25-5.61-1.52.13-2.03 1.13-1.89 2.75.09 1.08-1.02 1.8-1.86 1.33-.67-.41-.66-1.19-.06-1.78C8.18 5.31 8.68 2.45 5.05.32L5.03.3l.02.01z"></path>
+        </svg></span>danger</h5>
+  </div>
+  <div class="admonition-content">
+    <p>Attempting to call a non-static method will result in an error. Specify the <code>static</code> modifier to use static methods.</p>
+  </div>
+</div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Object"><code style="text-decoration:none">Object</code><a href="#Object" class="hash-link" aria-label="Direct link to Object" title="Direct link to Object">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/mnmzc/LuaClass/blob/master/src/ClassBuilder.lua#L79"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">interface</code> <code>Object<!-- --> <!-- -->{</code><div class="inset_uKQm"><div><code>any<!-- -->: </code><span><code>[</code><code class="blue_P4bS">function</code><code class="op_lSLc"> | </code><code class="blue_P4bS">any</code><code>]</code></span><span class="inlineDescription_G7Er">-- <span>
+<p>The methods and properties of this Object</p>
+</span></span></div></div><code>}</code></div><div>
+<p>An instance of a class. Methods that affect properties of objects will only affect this object.</p>
+<div class="admonition admonition-danger alert alert--danger">
+  <div class="admonition-heading">
+    <h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="16" viewBox="0 0 12 16">
+          <path d="M5.05.31c.81 2.17.41 3.38-.52 4.31C3.55 5.67 1.98 6.45.9 7.98c-1.45 2.05-1.7 6.53 3.53 7.7-2.2-1.16-2.67-4.52-.3-6.61-.61 2.03.53 3.33 1.94 2.86 1.39-.47 2.3.53 2.27 1.67-.02.78-.31 1.44-1.13 1.81 3.42-.59 4.78-3.42 4.78-5.56 0-2.84-2.53-3.22-1.25-5.61-1.52.13-2.03 1.13-1.89 2.75.09 1.08-1.02 1.8-1.86 1.33-.67-.41-.66-1.19-.06-1.78C8.18 5.31 8.68 2.45 5.05.32L5.03.3l.02.01z"></path>
+        </svg></span>danger</h5>
+  </div>
+  <div class="admonition-content">
+    <p>If you passed the <code>private</code> modifier then you won't be able to call the method directly via the object. Remove the modifier if you need to use it outside of the definition.</p>
+  </div>
+</div>
+</div><h2 class="anchor anchorWithStickyNavbar_LWe7" id="properties">Properties<a href="#properties" class="hash-link" aria-label="Direct link to Properties" title="Direct link to Properties">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="RESTRICTED_DEFINITIONS"><code style="text-decoration:none">RESTRICTED_DEFINITIONS</code><a href="#RESTRICTED_DEFINITIONS" class="hash-link" aria-label="Direct link to RESTRICTED_DEFINITIONS" title="Direct link to RESTRICTED_DEFINITIONS">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/mnmzc/LuaClass/blob/master/src/ClassBuilder.lua#L30"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>ClassBuilder<!-- -->.<!-- -->RESTRICTED_DEFINITIONS<!-- -->:<!-- --> </code> <code class="purple_ieR2">{</code><code class="blue_P4bS">string</code><code class="purple_ieR2">}</code></div><div>
+<p>A list of definitions that you are not allowed to use when defining methods or properties.</p>
+</div><h2 class="anchor anchorWithStickyNavbar_LWe7" id="functions">Functions<a href="#functions" class="hash-link" aria-label="Direct link to Functions" title="Direct link to Functions">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="new"><code style="text-decoration:none">new</code><a href="#new" class="hash-link" aria-label="Direct link to new" title="Direct link to new">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/mnmzc/LuaClass/blob/master/src/ClassBuilder.lua#L127"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>ClassBuilder<!-- -->.</code><code class="green_DgR4">new</code><code>(</code><div class="inset_uKQm"><div><code>definition<!-- -->: </code><code class="blue_P4bS">function</code><span class="inlineDescription_G7Er">-- <span>
+<p>The function that will be called so you can define the class</p>
+</span></span></div></div><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/LuaClass/api/ClassBuilder#Class">Class</a></code><span class="inlineDescription_G7Er">-- <span>
+<p>The class object that you have created</p>
+</span></span></div><div>
+<p>Creates a new class, which you can define with the passed function.</p>
+<pre class="language-lua"><code class="language-lua"><span class="token keyword">local</span> MyClass <span class="token operator">=</span> Class<span class="token punctuation">.</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>def<span class="token punctuation">)</span>
+    def<span class="token punctuation">.</span>maxTemp <span class="token operator">=</span> <span class="token number">250</span>
+    def<span class="token punctuation">.</span>windy <span class="token operator">=</span> <span class="token keyword">false</span>
+
+    def<span class="token punctuation">.</span>getMaxTemp <span class="token operator">=</span> Class<span class="token punctuation">.</span><span class="token function">addMethod</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>maxTemp
+    <span class="token keyword">end</span><span class="token punctuation">)</span>
+<span class="token keyword">end</span><span class="token punctuation">)</span>
+</code></pre>
+<h4>The <code>def</code> parameter</h4>
+<p>
+  This is a parameter that is passed to your defining function. When you assign a new index to the definition, it will either be a method or property. When assigning a new method (static or not),
+  you need to use <a href="#addMethod">ClassBuilder.addMethod</a> so that you can get a <a href="#ClassMethod">ClassMethod</a>. Then, set the key to the new <a href="#ClassMethod">ClassMethod</a> that you have just created. Now,
+  if you want to assign just a general property, you can just set the index equal to whatever you want the property to be. There is no special way to do it, simply imagine you are assigning a
+  value to any table.
+</p>
+<pre class="language-lua"><code class="language-lua">def<span class="token punctuation">.</span>myFirstProperty <span class="token operator">=</span> <span class="token string">"hi"</span>
+def<span class="token punctuation">.</span>mySecondProp <span class="token operator">=</span> <span class="token number">12</span>
+def<span class="token punctuation">.</span>myCoolTable <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">"cat"</span><span class="token punctuation">,</span>
+    <span class="token string">"dog"</span><span class="token punctuation">,</span>
+    <span class="token string">"bird"</span>
+<span class="token punctuation">}</span>
+
+def<span class="token punctuation">.</span>myMethod <span class="token operator">=</span> Class<span class="token punctuation">.</span><span class="token function">addMethod</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token comment">-- imagine there was something important here</span>
+<span class="token keyword">end</span><span class="token punctuation">)</span>
+</code></pre>
+<div class="admonition admonition-caution alert alert--warning">
+  <div class="admonition-heading">
+    <h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+          <path d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path>
+        </svg></span>caution</h5>
+  </div>
+  <div class="admonition-content">
+    <p>When you have a <code>private</code> method, make sure to only call it with the <code>def</code>.</p>
+  </div>
+</div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="addMethod"><code style="text-decoration:none">addMethod</code><a href="#addMethod" class="hash-link" aria-label="Direct link to addMethod" title="Direct link to addMethod">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/mnmzc/LuaClass/blob/master/src/ClassBuilder.lua#L227"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>ClassBuilder<!-- -->.</code><code class="green_DgR4">addMethod</code><code>(</code><div class="inset_uKQm"><div><code>...<!-- -->: </code><code class="blue_P4bS">any</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>Modifiers of the function</p>
+</span></span></div><div><code>f<!-- -->: </code><code class="blue_P4bS">function</code><span class="inlineDescription_G7Er">-- <span>
+<p>The method to obtain a table for</p>
+</span></span></div></div><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/LuaClass/api/ClassBuilder#ClassMethod">ClassMethod</a></code><span class="inlineDescription_G7Er">-- <span>
+<p>The method that can be added to the class</p>
+</span></span></div><div>
+<p>Creates a table that can be consumed by your class when you define methods.</p>
+<pre class="language-lua"><code class="language-lua"><span class="token keyword">local</span> Cake <span class="token operator">=</span> Class<span class="token punctuation">.</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>def<span class="token punctuation">)</span>
+    def<span class="token punctuation">.</span>bake <span class="token operator">=</span> Class<span class="token punctuation">.</span><span class="token function">addMethod</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> temp<span class="token punctuation">)</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"Baking the cake at "</span> <span class="token operator">..</span> temp <span class="token operator">..</span> <span class="token string">"degrees"</span><span class="token punctuation">)</span>
+
+        self<span class="token punctuation">.</span>cookTemp <span class="token operator">=</span> temp
+        self<span class="token punctuation">.</span>crisp <span class="token operator">=</span> <span class="token keyword">true</span>
+    <span class="token keyword">end</span><span class="token punctuation">)</span>
+<span class="token keyword">end</span><span class="token punctuation">)</span>
+</code></pre>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="modifiers"><code style="text-decoration:none">modifiers</code><a href="#modifiers" class="hash-link" aria-label="Direct link to modifiers" title="Direct link to modifiers">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/mnmzc/LuaClass/blob/master/src/ClassBuilder.lua#L287"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>ClassBuilder<!-- -->.</code><code class="green_DgR4">modifiers</code><code>(</code><code>) → </code><code>(</code><div class="inset_uKQm"><div><code class="blue_P4bS">static</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>The static modifier</p>
+</span></span></div><div><code class="blue_P4bS">private</code><span class="inlineDescription_G7Er">-- <span>
+<p>The private modifier</p>
+</span></span></div></div><code>)</code></div><div>
+<p>Returns the modifiers that you can pass to your methods.</p>
+<pre class="language-lua"><code class="language-lua"><span class="token keyword">local</span> static<span class="token punctuation">,</span> private <span class="token operator">=</span> Class<span class="token punctuation">.</span><span class="token function">modifiers</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">local</span> Cake <span class="token operator">=</span> Class<span class="token punctuation">.</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>def<span class="token punctuation">)</span>
+    def<span class="token punctuation">.</span>announce <span class="token operator">=</span> Class<span class="token punctuation">.</span><span class="token function">addMethod</span><span class="token punctuation">(</span>static<span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>flavor<span class="token punctuation">)</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"Gee I sure could go for a "</span> <span class="token operator">..</span> flavor <span class="token operator">..</span> <span class="token string">" cake right about now"</span><span class="token punctuation">)</span>
+    <span class="token keyword">end</span><span class="token punctuation">)</span>
+
+    def<span class="token punctuation">.</span>getTemperature <span class="token operator">=</span> Class<span class="token punctuation">.</span><span class="token function">addMethod</span><span class="token punctuation">(</span>private<span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>cookTemp
+    <span class="token keyword">end</span><span class="token punctuation">)</span>
+
+    def<span class="token punctuation">.</span>testTemp <span class="token operator">=</span> Class<span class="token punctuation">.</span><span class="token function">addMethod</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span>
+        <span class="token keyword">local</span> cakeTemp <span class="token operator">=</span> def<span class="token punctuation">.</span><span class="token function">getTemperature</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        
+        <span class="token keyword">if</span> cakeTemp <span class="token operator">></span> <span class="token number">200</span> <span class="token keyword">then</span>
+            <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"Yeah we can definitely eat this now"</span><span class="token punctuation">)</span>
+        <span class="token keyword">else</span>
+            <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"It needs to go back into the oven"</span><span class="token punctuation">)</span>
+        <span class="token keyword">end</span>
+    <span class="token keyword">end</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span>
+</code></pre>
+<p>The <strong>static</strong> modifier specifies that a method can be used without instantiating an object. You would do this by directly calling the method on a <em>class</em>. (It would still work if you called it on an object.)</p>
+<p>The <strong>private</strong> modifier specifies that a method can only be used internally in a definition. This means that if you want to call a private method, use the <code>def</code> and then call the method.</p>
+<p>Using the previous example, we can display this functionality with our <code>Cake</code> class.</p>
+<pre class="language-lua"><code class="language-lua">Cake<span class="token punctuation">.</span><span class="token function">announce</span><span class="token punctuation">(</span><span class="token string">"chocolate"</span><span class="token punctuation">)</span> <span class="token comment">-- Gee I sure could go for a chocolate cake right about now</span>
+
+<span class="token keyword">local</span> myCake <span class="token operator">=</span> Cake<span class="token punctuation">.</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+myCake<span class="token punctuation">.</span><span class="token function">testTemp</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">-- It needs to go back into the oven</span>
+</code></pre>
+</div></div></article></div><details><summary>Show raw api</summary><pre style="max-width:100%;white-space:pre-wrap">{
+    &quot;functions&quot;: [
+        {
+            &quot;name&quot;: &quot;new&quot;,
+            &quot;desc&quot;: &quot;Creates a new class, which you can define with the passed function.\n\n```lua\nlocal MyClass = Class.new(function(def)\n    def.maxTemp = 250\n    def.windy = false\n\n    def.getMaxTemp = Class.addMethod(function()\n        return self.maxTemp\n    end)\nend)\n```\n\n#### The `def` parameter\nThis is a parameter that is passed to your defining function. When you assign a new index to the definition, it will either be a method or property. When assigning a new method (static or not),\nyou need to use [ClassBuilder.addMethod](#addMethod) so that you can get a [ClassMethod](#ClassMethod). Then, set the key to the new [ClassMethod](#ClassMethod) that you have just created. Now,\nif you want to assign just a general property, you can just set the index equal to whatever you want the property to be. There is no special way to do it, simply imagine you are assigning a\nvalue to any table.\n\n```lua\ndef.myFirstProperty = \&quot;hi\&quot;\ndef.mySecondProp = 12\ndef.myCoolTable = {\n    \&quot;cat\&quot;,\n    \&quot;dog\&quot;,\n    \&quot;bird\&quot;\n}\n\ndef.myMethod = Class.addMethod(function()\n    -- imagine there was something important here\nend)\n```\n\n:::caution\nWhen you have a `private` method, make sure to only call it with the `def`.\n:::&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;definition&quot;,
+                    &quot;desc&quot;: &quot;The function that will be called so you can define the class&quot;,
+                    &quot;lua_type&quot;: &quot;function&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;The class object that you have created&quot;,
+                    &quot;lua_type&quot;: &quot;Class&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 127,
+                &quot;path&quot;: &quot;src/ClassBuilder.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;addMethod&quot;,
+            &quot;desc&quot;: &quot;Creates a table that can be consumed by your class when you define methods.\n\n```lua\nlocal Cake = Class.new(function(def)\n    def.bake = Class.addMethod(function(self, temp)\n        print(\&quot;Baking the cake at \&quot; .. temp .. \&quot;degrees\&quot;)\n\n        self.cookTemp = temp\n        self.crisp = true\n    end)\nend)\n```&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;...&quot;,
+                    &quot;desc&quot;: &quot;Modifiers of the function&quot;,
+                    &quot;lua_type&quot;: &quot;any&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;f&quot;,
+                    &quot;desc&quot;: &quot;The method to obtain a table for&quot;,
+                    &quot;lua_type&quot;: &quot;function&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;The method that can be added to the class&quot;,
+                    &quot;lua_type&quot;: &quot;ClassMethod&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 227,
+                &quot;path&quot;: &quot;src/ClassBuilder.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;modifiers&quot;,
+            &quot;desc&quot;: &quot;Returns the modifiers that you can pass to your methods.\n\n```lua\nlocal static, private = Class.modifiers()\nlocal Cake = Class.new(function(def)\n    def.announce = Class.addMethod(static, function(flavor)\n        print(\&quot;Gee I sure could go for a \&quot; .. flavor .. \&quot; cake right about now\&quot;)\n    end)\n\n    def.getTemperature = Class.addMethod(private, function(self)\n        return self.cookTemp\n    end)\n\n    def.testTemp = Class.addMethod(function(self)\n        local cakeTemp = def.getTemperature()\n        \n        if cakeTemp &gt; 200 then\n            print(\&quot;Yeah we can definitely eat this now\&quot;)\n        else\n            print(\&quot;It needs to go back into the oven\&quot;)\n        end\n    end)\n)\n```\n\nThe **static** modifier specifies that a method can be used without instantiating an object. You would do this by directly calling the method on a *class*. (It would still work if you called it on an object.)\n\nThe **private** modifier specifies that a method can only be used internally in a definition. This means that if you want to call a private method, use the `def` and then call the method.\n\nUsing the previous example, we can display this functionality with our `Cake` class.\n\n```lua\nCake.announce(\&quot;chocolate\&quot;) -- Gee I sure could go for a chocolate cake right about now\n\nlocal myCake = Cake.new()\nmyCake.testTemp() -- It needs to go back into the oven\n```&quot;,
+            &quot;params&quot;: [],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;The static modifier&quot;,
+                    &quot;lua_type&quot;: &quot;static&quot;
+                },
+                {
+                    &quot;desc&quot;: &quot;The private modifier&quot;,
+                    &quot;lua_type&quot;: &quot;private&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 287,
+                &quot;path&quot;: &quot;src/ClassBuilder.lua&quot;
+            }
+        }
+    ],
+    &quot;properties&quot;: [
+        {
+            &quot;name&quot;: &quot;RESTRICTED_DEFINITIONS&quot;,
+            &quot;desc&quot;: &quot;A list of definitions that you are not allowed to use when defining methods or properties.&quot;,
+            &quot;lua_type&quot;: &quot;{string}&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 30,
+                &quot;path&quot;: &quot;src/ClassBuilder.lua&quot;
+            }
+        }
+    ],
+    &quot;types&quot;: [
+        {
+            &quot;name&quot;: &quot;ClassMethod&quot;,
+            &quot;desc&quot;: &quot;An object that represents a method that can be consumed by your class definition.&quot;,
+            &quot;fields&quot;: [
+                {
+                    &quot;name&quot;: &quot;methodSymbol&quot;,
+                    &quot;lua_type&quot;: &quot;methodSymbol&quot;,
+                    &quot;desc&quot;: &quot;A userdata to indicate that this is a method&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;call&quot;,
+                    &quot;lua_type&quot;: &quot;function&quot;,
+                    &quot;desc&quot;: &quot;The function that will be called when this method is used&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;methodModifiers&quot;,
+                    &quot;lua_type&quot;: &quot;{static | private}&quot;,
+                    &quot;desc&quot;: &quot;If you provide the `static` or `private` modifiers, they will appear here&quot;
+                }
+            ],
+            &quot;source&quot;: {
+                &quot;line&quot;: 43,
+                &quot;path&quot;: &quot;src/ClassBuilder.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;Class&quot;,
+            &quot;desc&quot;: &quot;Contains a `new` function to instantiate new objects, as well as any static methods.\n\n:::danger\nAttempting to call a non-static method will result in an error. Specify the `static` modifier to use static methods.\n:::&quot;,
+            &quot;fields&quot;: [
+                {
+                    &quot;name&quot;: &quot;new&quot;,
+                    &quot;lua_type&quot;: &quot;function&quot;,
+                    &quot;desc&quot;: &quot;A function that can be used to instantiate a new object&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;any&quot;,
+                    &quot;lua_type&quot;: &quot;[function]&quot;,
+                    &quot;desc&quot;: &quot;The **static** methods and properties that exist in the class&quot;
+                }
+            ],
+            &quot;source&quot;: {
+                &quot;line&quot;: 62,
+                &quot;path&quot;: &quot;src/ClassBuilder.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;Object&quot;,
+            &quot;desc&quot;: &quot;An instance of a class. Methods that affect properties of objects will only affect this object.\n\n:::danger\nIf you passed the `private` modifier then you won&#x27;t be able to call the method directly via the object. Remove the modifier if you need to use it outside of the definition.\n:::&quot;,
+            &quot;fields&quot;: [
+                {
+                    &quot;name&quot;: &quot;any&quot;,
+                    &quot;lua_type&quot;: &quot;[function | any]&quot;,
+                    &quot;desc&quot;: &quot;The methods and properties of this Object&quot;
+                }
+            ],
+            &quot;source&quot;: {
+                &quot;line&quot;: 79,
+                &quot;path&quot;: &quot;src/ClassBuilder.lua&quot;
+            }
+        }
+    ],
+    &quot;name&quot;: &quot;ClassBuilder&quot;,
+    &quot;desc&quot;: &quot;The primary class that contains functions to help you create classes.&quot;,
+    &quot;source&quot;: {
+        &quot;line&quot;: 6,
+        &quot;path&quot;: &quot;src/ClassBuilder.lua&quot;
+    }
+}</pre></details></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#types" class="table-of-contents__link toc-highlight">Types</a><ul><li><a href="#Class" class="table-of-contents__link toc-highlight">Class</a></li><li><a href="#ClassMethod" class="table-of-contents__link toc-highlight">ClassMethod</a></li><li><a href="#Object" class="table-of-contents__link toc-highlight">Object</a></li></ul></li><li><a href="#properties" class="table-of-contents__link toc-highlight">Properties</a><ul><li><a href="#RESTRICTED_DEFINITIONS" class="table-of-contents__link toc-highlight">RESTRICTED_DEFINITIONS</a></li></ul></li><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#addMethod" class="table-of-contents__link toc-highlight">.addMethod</a></li><li><a href="#modifiers" class="table-of-contents__link toc-highlight">.modifiers</a></li><li><a href="#new" class="table-of-contents__link toc-highlight">.new</a></li></ul></li></ul></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2023 mnmzc. Built with Moonwave and Docusaurus.</div></div></div></footer></div>
+<script src="/LuaClass/assets/js/runtime~main.f0269f4e.js"></script>
+<script src="/LuaClass/assets/js/main.c48a4010.js"></script>
+</body>
+</html>

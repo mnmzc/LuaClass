@@ -1,13 +1,12 @@
 [package]
-name = "mnm/class"
+name = "mnmzc/class"
 description = "A simple package for creating Object-Oriented Programming Classes"
 license = "MIT"
 authors = ["mnmzc"]
-version = "1.0.0"
+version = "1.0.2"
 registry = "https://github.com/mnmzc/LuaClass"
 realm = "shared"
 
-exclude = ["**"]
 include = ["src", "default.project.json", "wally.toml", "selene.toml"]
 
 [dependencies]

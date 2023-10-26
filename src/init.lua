@@ -1,3 +1,2 @@
-local ClassBuilder = require(script.Parent["ClassBuilder"])
-
+local ClassBuilder = require(script["ClassBuilder"])
 return ClassBuilder

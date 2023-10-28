@@ -1,3 +1,9 @@
 # LuaClass
 A simple package that can help you make your Lua project support classes similar to those of Java.
-This package is still undergoing heavy development. It is not reccomended to use it in your project just yet, however most core features will work.
+
+## Getting Started
+To get started, add the following line to your `wally.toml` file
+```toml
+[dependencies]
+Class = "mnmzc/class@1.0.2"
+```

@@ -194,8 +194,14 @@ ClassBuilder.new = function(definition): Class
         constructable[pName] = property
     end
 
-    function template.new(): Object
+    function template.new(...): Object
         local object = table.clone(constructable)
+
+        -- Call constructur function
+        if object._constructor then
+            object:_constructor(...)
+        end
+
         return object
     end
 
@@ -270,10 +276,6 @@ end
         end)
     )
     ```
-
-    The **static** modifier specifies that a method can be used without instantiating an object. You would do this by directly calling the method on a *class*. (It would still work if you called it on an object.)
-    
-    The **private** modifier specifies that a method can only be used internally in a definition. This means that if you want to call a private method, use the `def` and then call the method.
     
     Using the previous example, we can display this functionality with our `Cake` class.
 
